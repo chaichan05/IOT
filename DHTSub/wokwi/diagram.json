@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "sankchaichan _",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -114.9, "left": 205.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -53.35,
+      "left": 75.4,
+      "rotate": 180,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:SDA", "esp:22", "green", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0", "h19.2", "v-67.2" ] ],
+    [ "r1:1", "dht1:VCC", "red", [ "v0" ] ],
+    [ "r1:2", "esp:3V3", "red", [ "v0", "h-85.2" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "C:/Users/admin/Documents/PlatformIO/Projects/LAB-1"
+		},
+		{
+			"name": "PlatformIO",
+			"path": "PlatformIO"
+		},
+		{
+			"name": "LAB Delay",
+			"path": "LAB Delay"
+		},
+		{
+			"name": "Lab-Relay",
+			"path": "C:/Users/admin/Documents/PlatformIO/Projects/Lab-Relay"
+		},
+		{
+			"name": "Lab-LDE-Digital",
+			"path": "C:/Users/admin/Documents/PlatformIO/Projects/Lab-LDE-Digital"
+		},
+		{
+			"name": "Lab-LCD",
+			"path": "C:/Users/admin/Documents/PlatformIO/Projects/Lab-LCD"
+		}
+	],
+	"settings": {}
+}
