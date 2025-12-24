@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "sankchaichan _",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 83.4, "left": 223.6, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -96,
+      "left": 4.84,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -99.2,
+      "left": 216.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 29.1, "left": 359.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "bb1:tn.5", "black", [ "h-48", "v182.4", "h134.4" ] ],
+    [ "bb1:15t.e", "esp:12", "green", [ "v57.6", "h-403.2", "v-86.4" ] ],
+    [ "bb1:17t.c", "bb1:tn.16", "black", [ "v0", "h163.2" ] ],
+    [ "bb1:tn.1", "esp:GND.1", "black", [ "v38.3", "h-267.2", "v-86.4" ] ],
+    [ "lcd1:SCL", "esp:22", "magenta", [ "h-57.6", "v-9.3" ] ],
+    [ "bb1:14t.c", "bb1:tp.8", "red", [ "v9.6", "h-240" ] ],
+    [ "lcd1:VCC", "bb1:tp.5", "red", [ "h-28.8", "v124.9", "h96" ] ],
+    [ "bb1:tp.1", "esp:5V", "red", [ "v29.1", "h-257.6" ] ],
+    [ "dht1:VCC", "bb1:14t.b", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:15t.b", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:16t.b", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:17t.b", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "sankchaichan _",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 25.6,
+      "left": 216.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -3.6,
+      "left": -188.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 15.6,
+      "left": -159.4,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-led", "id": "led3", "top": 25.2, "left": -121, "attrs": { "color": "cyan" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:22", "lcd1:SCL", "magenta", [ "h52.84", "v28.8" ] ],
+    [ "lcd1:SDA", "esp:21", "blue", [ "h0" ] ],
+    [ "esp:GND.2", "lcd1:GND", "black", [ "v0", "h81.64", "v19.2" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h-48", "v-115.1", "h-220.8", "v9.6" ] ],
+    [ "led3:A", "esp:32", "cyan", [ "v0" ] ],
+    [ "led2:A", "esp:25", "yellow", [ "v0" ] ],
+    [ "led1:A", "esp:26", "red", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led3:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

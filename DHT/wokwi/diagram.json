@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "sankchaichan _",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 93, "left": 194.8, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -48, "left": 4.84, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -70.4,
+      "left": 236,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 38.7, "left": 330.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -3.6,
+      "left": -293.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": -236.2,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -42,
+      "left": -178.6,
+      "attrs": { "color": "cyan" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "bb1:tn.1", "black", [ "h0" ] ],
+    [ "dht1:GND", "bb1:tn.16", "black", [ "v9.6", "h201.6" ] ],
+    [ "bb1:tn.2", "esp:GND.1", "black", [ "v115.1", "h-248", "v-76.8" ] ],
+    [ "dht1:VCC", "bb1:tp.6", "red", [ "v38.4", "h-48" ] ],
+    [ "lcd1:VCC", "bb1:tp.2", "red", [ "h-28.8", "v134.5", "h9.6" ] ],
+    [ "lcd1:SCL", "esp:22", "violet", [ "h-76.8", "v19.5" ] ],
+    [ "lcd1:SDA", "esp:21", "blue", [ "h-57.6", "v38.6" ] ],
+    [ "dht1:VCC", "bb1:14t.b", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:15t.b", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:16t.b", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:17t.b", "", [ "$bb" ] ],
+    [ "led1:A", "esp:25", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led2:A", "esp:26", "yellow", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led3:A", "esp:32", "cyan", [ "v0" ] ],
+    [ "led3:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "dht1:SDA", "esp:12", "orange", [ "v38.4", "h-393.5", "v-105.6" ] ]
+  ],
+  "dependencies": {}
+}

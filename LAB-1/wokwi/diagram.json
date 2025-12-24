@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "sankchaichan _",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 66.6,
+      "left": -179.4,
+      "rotate": 90,
+      "attrs": { "color": "red", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.l", "esp:GND.2", "black", [ "v-76.8", "h240", "v48" ] ],
+    [ "btn1:2.l", "esp:21", "green", [ "v-96", "h297.4", "v96" ] ]
+  ],
+  "dependencies": {}
+}
